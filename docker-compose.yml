@@ -1,0 +1,13 @@
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: Concesionario
+    environment:
+      MYSQL_DATABASE: "Concesionario"
+      MYSQL_ROOT_PASSWORD: "1234"
+    volumes:
+      - "C:/Users/user/Desktop/dockercompose/mysql_data:/var/lib/mysql"  # Ruta local corregida
+      - "C:/Users/user/Desktop/dockercompose/init.sql:/docker-entrypoint-initdb.d/init.sql"  # Script de inicialización
+    ports:
+      - "3310:3306"
